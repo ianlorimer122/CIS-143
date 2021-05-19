@@ -1,27 +1,20 @@
-package com.olympic.cis143.m05.student.lab.trycatch;
-
-import javax.management.BadStringOperationException;
+package com.olympic.cis143.m05.student.homework.annotations1;
 
 public class Main {
 
-    public static void main (String[] a) {
+    public static void main(String[] a) {
         Main main = new Main();
-        main.testNeedsToBeModified();
-        
+        main.callSayHello();
+        main.callSayGoodBye();
     }
 
-    public void testNeedsToBeModified() {
-    	try {
-			new ThrowsException().throwAnExceptionForMe();
-		} catch (BadStringOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MyException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    @SuppressWarnings("deprecation")
+	private void callSayHello() {
+        System.out.println(new HomeworkAnnotations().sayHello());
+    }
+
+    @SuppressWarnings("deprecation")
+	private void callSayGoodBye() {
+        System.out.println(new HomeworkAnnotations().sayGoodBye());
     }
 }
